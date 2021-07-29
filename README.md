@@ -19,6 +19,6 @@
     cd profile_gui_dev
     cd startup
     sudo nano 00-start.py
-the content in 00-start.py are used to initial the bluesky RE environment. we can add epics motor "IOCsim:m1" into ophyd, and then we can see it , move it or use it to scan in bluesky. In the foto "bluesky_interface.png", we can get the m1 als bluesky motor, and the position of m1 is 1.00. Actually m1 stands for the epics PV "IOCsim:m1". 
+The content in 00-start.py is used to initial the bluesky RE environment. We can add epics motor "IOCsim:m1" into ophyd, and then we can see it , move it or use it to scan in bluesky. After restart bluesky, we can get the m1 als bluesky motor using "wa", and the position of m1 is 1.00 using "m1.position". Actually m1 stands for the epics PV "IOCsim:m1". 
     
 
