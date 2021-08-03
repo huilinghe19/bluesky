@@ -4,8 +4,15 @@
 
 ## open mongodb, create user and password. open mongodb.
 
-## activate the virtual environment.
+##  pip upgrade ??  upgrade will destroy something. use conda install in the end.
+
+    /hzb/huiling/anaconda3/envs/bluesky-tutorial/bin/python3.7 -m pip install --upgrade pip
+
+## activate the virtual environment with conda.
+
     conda activate bluesky-tutorial
+
+    
 
 ## open bluesky with initial settings
     ipython --matplotlib=qt5
