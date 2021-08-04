@@ -28,6 +28,10 @@ xraylib:
 
 https://anaconda.org/conda-forge/xraylib
 
+If this error occurs: """Error: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.""", use the following command:
+
+    sudo ln -s /usr/lib/x86_64-linux-gnu/libxcb-util.so.0  /usr/lib/x86_64-linux-gnu/libxcb-util.so.1
+
 ## Tips and suggestions from Willam:
 """
 1. Install a mongoDB on your machine
