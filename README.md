@@ -6,7 +6,15 @@
 
 ## Tips and suggestions from Willam:
 """
-Install a mongoDB on your machineCreate the configuration files so that the databroker can access it use your credentials and not the ones shown in this manualCreate an ipython environment that connects a run engine to the mongoDB you have just set up (Use this repo)Pull a version of the queue server, run the tutorialPull a version of the existing GUI, try and run it ariadne --catalog your_catalog_name -zmq your_hostname:zmq_port
+1. Install a mongoDB on your machine
+
+2. Create the configuration files so that the databroker can access it use your credentials and not the ones shown in this manual
+
+3. Create an ipython environment that connects a run engine to the mongoDB you have just set up (Use this repo)
+
+4. Pull a version of the queue server, run the tutorial
+
+5. Pull a version of the existing GUI, try and run it ariadne --catalog your_catalog_name -zmq your_hostname:zmq_port
 
 I think the first objective, once this is all running is first to just run a plan with the simulated detectors and motors, and check it works. 
 
