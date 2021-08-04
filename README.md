@@ -24,6 +24,9 @@ ariadne:
 
 https://github.com/NSLS-II-BMM/ariadne
 
+xraylib:
+
+https://anaconda.org/conda-forge/xraylib
 
 ## Tips and suggestions from Willam:
 """
