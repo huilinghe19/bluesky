@@ -33,6 +33,7 @@ we can use it to see which are contained in the mongo DB. I created a db called 
     mongo -u AdminSammy -p --authenticationDatabase admin
 
 It will be used in the catalog definition in bluesky intake. add the test catalog in bluesky.
+
     cd /hzb/huiling/anaconda3/envs/bluesky-tutorial/share/intake/
     sudo nano test.yml
     """
@@ -45,7 +46,9 @@ It will be used in the catalog definition in bluesky intake. add the test catalo
 
     """
     (The indentation above is omitted)
+
 # bluesky widgets / ariadne
+
 Terminal 1: 
     start-re-manager --databroker-config test
 
