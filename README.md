@@ -2,7 +2,28 @@
 
 ## create a new virtual environment "bleusky-tutorial", install mongodb, bluesky, ophyd, bluesky_queueserver, ariadne.
 
-## open mongodb, create user and password. restart mongodb.
+Install MongoDB on debian:
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/
+
+(The installation is different with other systems!! The mongodb package provided by Debian is not maintained by MongoDB Inc. and conflicts with the official mongodb-org package. If you have already installed the mongodb package on your Debian system, you must first uninstall the mongodb package before proceeding with these instructions. )
+
+bluesky: 
+
+https://blueskyproject.io/bluesky/
+
+bluesky queueserver:
+
+https://blueskyproject.io/bluesky-queueserver/
+
+bluesky widgets:  
+
+https://github.com/NSLS-II/bluesky-widgets-demo
+
+ariadne: 
+
+https://github.com/NSLS-II-BMM/ariadne
+
 
 ## Tips and suggestions from Willam:
 """
