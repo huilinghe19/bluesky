@@ -37,13 +37,14 @@ It will be used in the catalog definition in bluesky intake. add the test catalo
     sudo nano test.yml
     """
     sources:
-        test:
-            driver: bluesky-mongo-normalized-catalog
-            args:
-                metadatastore_db: mongodb://AdminSammy:password@localhost:27017/test?authSource=admin
-                asset_registry_db: mongodb://AdminSammy:password@localhost:27017/test?authSource=admin
+    test:
+    driver: bluesky-mongo-normalized-catalog
+    args:
+    metadatastore_db: mongodb://AdminSammy:password@localhost:27017/test?authSource=admin
+    asset_registry_db: mongodb://AdminSammy:password@localhost:27017/test?authSource=admin
 
     """
+    (The indentation above is omitted)
 # bluesky widgets / ariadne
 Terminal 1: 
     start-re-manager --databroker-config test
