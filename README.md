@@ -4,7 +4,7 @@
 
 ## open mongodb, create user and password. open mongodb.
 
-##  pip upgrade ??  upgrade will destroy something. use conda install in the end.
+##  pip upgrade ??  upgrade may destroy something like ipython and qt things. use conda install in the end. step by step in a clean environment is important.
 
     /hzb/huiling/anaconda3/envs/bluesky-tutorial/bin/python3.7 -m pip install --upgrade pip
 
