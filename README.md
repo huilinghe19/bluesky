@@ -28,4 +28,9 @@
     sudo nano 00-start.py
 The content in 00-start.py is used to initial the bluesky RE environment. We can add epics motor "IOCsim:m1" into ophyd, and then we can see it , move it or use it to scan in bluesky. After restart bluesky, we can get the m1 als bluesky motor using "wa", and the position of m1 is 1.00 using "m1.position". Actually m1 stands for the epics PV "IOCsim:m1". 
     
+# bluesky widgets / ariadne
 
+bluesky widgets:  https://github.com/NSLS-II/bluesky-widgets-demo
+ariadne:  https://github.com/NSLS-II-BMM/ariadne
+
+Due to the lack of the documentation, I can just explore the programs and the structure by myself.    
