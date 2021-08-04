@@ -27,8 +27,8 @@
     sudo nano 00-start.py
 The content in 00-start.py is used to initial the bluesky RE environment. We can add epics motor "IOCsim:m1" into ophyd, and then we can see it , move it or use it to scan in bluesky. After restart bluesky, we can get the m1 als bluesky motor using "wa", and the position of m1 is 1.00 using "m1.position". Actually m1 stands for the epics PV "IOCsim:m1". 
 
-# mongo/ mogodb/ mongodb-compass
-we can use it to see which are contained in the mongo DB. I created a db called "test", with username "AdminSammy" and Password "password" in mongodb. "test" is a mongo db name, is also a catalog in databroker. 
+# mongo/ mongodb/ mongodb-compass
+we can use mongodb-compass to see which are contained in the mongo DB. I created a db called "test", with username "AdminSammy" and Password "password" in mongodb. "test" is a mongo db name, is also a catalog in databroker. 
 
     mongo -u AdminSammy -p --authenticationDatabase admin
 
