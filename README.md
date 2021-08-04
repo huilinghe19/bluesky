@@ -2,7 +2,7 @@
 
 ## create a new virtual environment "bleusky-tutorial", install mongodb, bluesky, ophyd, bluesky_queueserver, ariadne.
 
-## open mongodb, create user and password. open mongodb.
+## open mongodb, create user and password. restart mongodb.
 
 ## Tips and suggestions from Willam:
 """
