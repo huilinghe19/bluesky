@@ -1,4 +1,4 @@
-# bluesky_practice
+# Bluesky_practice
 
 ## create a new virtual environment "bleusky-tutorial", install mongodb, bluesky, ophyd, bluesky_queueserver, ariadne.
 
@@ -28,11 +28,15 @@ xraylib:
 
 https://anaconda.org/conda-forge/xraylib
 
-If this error occurs: """Error: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.""", use the following command:
+If the error occurs: 
+    
+    Error: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+
+ use the following command:
 
     sudo ln -s /usr/lib/x86_64-linux-gnu/libxcb-util.so.0  /usr/lib/x86_64-linux-gnu/libxcb-util.so.1
 
-## Tips and suggestions from Willam:
+## Advices from Willam:
 """
 1. Install a mongoDB on your machine
 
@@ -49,10 +53,11 @@ I think the first objective, once this is all running is first to just run a pla
 RE(scan([det],motor,-1,1,10))
 
 Then work on implementing the same thing in the GUI with the bluesky widgets. 
+
 """
 
 
-##  pip upgrade ?? Caution: Do not use it if you have alread installed some packages in the virtual environment! Pip upgrade may destroy the installed packages like ipython and qt things. Install bluesky step by step in a clean virtual environment according to the documentation is important. I use conda install in the end.
+##  pip upgrade ?? Caution: Do not use it if you have alread installed some packages in the virtual environment! Pip upgrade may destroy the installed packages in ipython and qt and the restore takes a lot of time. The best way is to create a new clean virtual environment and install Bluesky step by step according to the documentation. I use conda install in the end.
 
     /hzb/huiling/anaconda3/envs/bluesky-tutorial/bin/python3.7 -m pip install --upgrade pip
 
@@ -67,22 +72,32 @@ Then work on implementing the same thing in the GUI with the bluesky widgets.
 ## open bluesky with the existing profile "profile_gui_dev" from Willam.
     ipython --profile=gui_dev
 
-## connect with EPICS motor. change the startup file. 
+## connect with EPICS PV using EpicsMotor and EpicsSignal in Bluesky. change the startup file. 
     cd .ipython
     ls
     cd profile_gui_dev
     cd startup
     sudo nano 00-start.py
-The content in 00-start.py is used to initial the bluesky RE environment. We can add epics motor "IOCsim:m1" into ophyd, and then we can see it , move it or use it to scan in bluesky. After restart bluesky, we can get the m1 als bluesky motor using "wa", and the position of m1 is 1.00 using "m1.position". Actually m1 stands for the epics PV "IOCsim:m1". 
+
+The content in "00-start.py" is used to initial the bluesky RE environment. We can add epics motor "IOCsim:m1" into ophyd, and then we can see it , move it or use it to scan in bluesky. After restarting bluesky, we can see m1 als bluesky motor using "wa", and the position of m1 is 1.00 using "m1.position". Actually m1 stands for the epics PV "IOCsim:m1"(Epics virtual motor). EpicsSignal is called "EMILEL:test:rdCurE3", it is used in bluesky RE environment. Epics Motor and Epics Signal must be opened at first before opening bluesky.
+
+open epics virtual motor:
+
+    cd /hzb/EPICS01/motor-6.11-old/iocBoot/iocSim
+    ./st.cmd.unix
+
+open keithley 6517 and open the epics PV using the Website. Actually we opened the EPICS PV prefix with "EMILEL:test". All relevant PV are opened, we only choose EPICS PV "EMILEL:test:rdCurE3" as a testing signal in Bluesky. 
+
+    caget EMILEL:test:rdCurE3
 
 # mongo/ mongodb/ mongodb-compass
-Note "ulimit -n 64000" with mongo db installation.
+Note the limit: set "ulimit -n 64000" with mongo db installation.
 
-mongo db must be restarted after reboot.
+Mongo db must be restarted after reboot.
 
 We can use mongodb-compass to see which are contained in the mongo DB. 
 
-I created a db called "test", with username "AdminSammy" and Password "password" in mongodb. "test" is a mongo db name, is also a catalog in databroker, which is used in bluesky queueserver and ariadne GUI.
+I created a db called "test", with username "AdminSammy" and Password "password" in mongodb. These createUser operations must be done in the mongo db. "test" is a mongo db name, is also a catalog in databroker, which is used in bluesky queueserver and ariadne GUI.
 
     mongo -u AdminSammy -p --authenticationDatabase admin
 
@@ -100,7 +115,6 @@ It will be used in the catalog definition in bluesky intake. add the test catalo
 
     """
     (The indentation above is omitted)
-
 # bluesky widgets / ariadne
 
 Terminal 1: 
@@ -111,7 +125,7 @@ Ternimal 2:
 
     ariadne --catalog test --zmq localhost:60615
 
-with at least these two commands, ariadne GUI will be opened, in the GUI we can do the plans like scan and mv, which are already stored in the bluesky queueserver, I try to understand the theroy of the communications and know how to create/change a GUI. Due to the lack of the relevant documentation, I can just explore the programs and the structure by myself. 
+With at least these two commands, ariadne GUI will be opened, in the GUI we can do the plans like scan and mv, which are already stored in the bluesky queueserver, I try to understand the theroy of the communications and know how to create/change a GUI. Due to the lack of the relevant documentation, I can just explore the programs and the structure by myself. 
 
 bluesky widgets:  https://github.com/NSLS-II/bluesky-widgets-demo
 ariadne:  https://github.com/NSLS-II-BMM/ariadne
