@@ -104,9 +104,11 @@ It will be used in the catalog definition in bluesky intake. add the test catalo
 # bluesky widgets / ariadne
 
 Terminal 1: 
+
     start-re-manager --databroker-config test
 
 Ternimal 2: 
+
     ariadne --catalog test --zmq localhost:60615
 
 with at least these two commands, ariadne GUI will be opened, in the GUI we can do the plans like scan and mv, which are already stored in the bluesky queueserver, I try to understand the theroy of the communications and know how to create/change a GUI. Due to the lack of the relevant documentation, I can just explore the programs and the structure by myself. 
@@ -115,11 +117,15 @@ bluesky widgets:  https://github.com/NSLS-II/bluesky-widgets-demo
 ariadne:  https://github.com/NSLS-II-BMM/ariadne
 
 PyCharm:
+
     /snap/pycharm-community/current/bin/pycharm.sh
+
 The ariadne package is installed in "/hzb/huiling/anaconda3/envs/bluesky-tutorial/lib/python3.7/site-packages/ariadne". I download ariadne in a modifiable environment again and use pycharm to explore/change them.
+
     cd work/Bluesky/ariadne/ariadne
     __init__.py  main.py  models.py  __pycache__  settings.py  tests  _version.py  viewer.py  widgets.py  widget_xafs.py
    
+
 
 
 
