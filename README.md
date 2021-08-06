@@ -114,11 +114,12 @@ with at least these two commands, ariadne GUI will be opened, in the GUI we can 
 bluesky widgets:  https://github.com/NSLS-II/bluesky-widgets-demo
 ariadne:  https://github.com/NSLS-II-BMM/ariadne
 
-It is saved in "/hzb/huiling/anaconda3/envs/bluesky-tutorial/lib/python3.7/site-packages/ariadne". I download ariadne again in a modifiable environment and use pycharm to explore them.
+PyCharm:
+    /snap/pycharm-community/current/bin/pycharm.sh
+The ariadne package is installed in "/hzb/huiling/anaconda3/envs/bluesky-tutorial/lib/python3.7/site-packages/ariadne". I download ariadne in a modifiable environment again and use pycharm to explore/change them.
     cd work/Bluesky/ariadne/ariadne
     __init__.py  main.py  models.py  __pycache__  settings.py  tests  _version.py  viewer.py  widgets.py  widget_xafs.py
-open pycharm:
-    /snap/pycharm-community/current/bin/pycharm.sh
+   
 
 
 
