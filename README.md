@@ -117,7 +117,6 @@ ariadne:  https://github.com/NSLS-II-BMM/ariadne
 It is saved in "/hzb/huiling/anaconda3/envs/bluesky-tutorial/lib/python3.7/site-packages/ariadne". I download ariadne again in a modifiable environment and use pycharm to explore them.
     cd work/Bluesky/ariadne/ariadne
     __init__.py  main.py  models.py  __pycache__  settings.py  tests  _version.py  viewer.py  widgets.py  widget_xafs.py
-    
 open pycharm:
     /snap/pycharm-community/current/bin/pycharm.sh
 
