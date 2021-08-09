@@ -141,7 +141,11 @@ The ariadne package is installed in "/hzb/huiling/anaconda3/envs/bluesky-tutoria
    
 
 # bluesky_queueserver
+
 The container of the settings from bluesky things into ariadne is here:
+
     cd anaconda3/envs/bluesky-tutorial/lib/python3.7/site-packages/bluesky_queueserver/profile_collection_sim
     00-ophyd.py  15-plans.py  99-custom.py  existing_plans_and_devices.yaml  __pycache__  user_group_permissions.yaml
+
+we can change the plans here.
 
