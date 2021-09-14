@@ -155,19 +155,27 @@ We can change the plans here:
 ## After reboot on dide17:
 
 Terminal 1(to start mongo db) on dide17: 
+
     systemctl start mongod.service
 
 Terminal 2(to start Epics PV "IOCsim:m1" for simulation epicsmotors) on dide17: 
+
     conda activate bluesky-tutorial
     cd /hzb/EPICS01/motor-6.11-old/iocBoot/iocSim
     ./st.cmd.unix
 
 Start Epics PV for keithley6517 on the website) on raspberrypi(192.168.1.101):
-    ## start keithley6517 with the button "start", then we can get the current value with "caget EMILEL:test:rdCurE3"   
+
+    ## start keithley6517 with the button "start", then we can get the current value with "caget EMILEL:test:rdCurE3" 
+
 Terminal 3(to start bluesky queueserver ) on dide17: 
+
     start-re-manager --databroker-config test
+
 Terminal 4(to start bluesky GUI) on dide17:
+
     bluesky-widgets-demo --catalog test --zmq localhost:60615
+
 
 ### Important:
 
@@ -179,9 +187,13 @@ Keithley6517 epics server is on the raspberry pi, epics motor server is on dide1
     caget IOCsim:m1
     export EPICS_CA_AUTO_ADDR_LIST=YES
 Terminal 1 on edono: 
+
     start-re-manager --databroker-config test
+
 Terminal 2 on edono:
+
     bluesky-widgets-demo --catalog test --zmq localhost:60615
+    
     
 
 
