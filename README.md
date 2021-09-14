@@ -151,3 +151,37 @@ We can change the plans here:
 
     sudo nano /hzb/huiling/anaconda3/envs/bluesky-tutorial/lib/python3.7/site-packages/bluesky/plans.py
 
+
+## After reboot on dide17:
+
+Terminal 1(to start mongo db) on dide17: 
+    systemctl start mongod.service
+
+Terminal 2(to start Epics PV "IOCsim:m1" for simulation epicsmotors) on dide17: 
+    conda activate bluesky-tutorial
+    cd /hzb/EPICS01/motor-6.11-old/iocBoot/iocSim
+    ./st.cmd.unix
+
+Start Epics PV for keithley6517 on the website) on raspberrypi(192.168.1.101):
+    ## start keithley6517 with the button "start", then we can get the current value with "caget EMILEL:test:rdCurE3"   
+Terminal 3(to start bluesky queueserver ) on dide17: 
+    start-re-manager --databroker-config test
+Terminal 4(to start bluesky GUI) on dide17:
+    bluesky-widgets-demo --catalog test --zmq localhost:60615
+
+### Important:
+
+Keithley6517 epics server is on the raspberry pi, epics motor server is on dide17, the GUI can be also opened on a third computer, for instance, "edono". Then we should use SSH to go to the dide17 at first and set the epics ca address, because we have two different epics servers(dide17 and raspberrypi). 
+
+    export EPICS_CA_ADDR_LIST=192.168.1.101  (ip address of raspberry pi)
+    caget EMILEL:test:rdCurE3
+    export EPICS_CA_ADDR_LIST=XXX.XX.XXX.XX   (ip address of dide17)
+    caget IOCsim:m1
+    export EPICS_CA_AUTO_ADDR_LIST=YES
+Terminal 1 on edono: 
+    start-re-manager --databroker-config test
+Terminal 2 on edono:
+    bluesky-widgets-demo --catalog test --zmq localhost:60615
+    
+
+
